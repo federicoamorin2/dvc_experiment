@@ -99,7 +99,8 @@ def predict(model_path: Path, test_df_path: Path, predict_path: Path) -> None:
 
 @app.command()
 def evaluate(
-    predict_file: Path, test_df_path: Path, scores_file: Path, plots_path: Path
+    predict_file: Path,
+    test_df_path: Path,  # , scores_file: Path, plots_path: Path
 ) -> None:
     """Compute and persist model metrics.
 
@@ -114,23 +115,20 @@ def evaluate(
     with open(predict_file, "rb") as fd:
         predicts = pickle.load(fd)
     y_test = pd.read_csv(test_df_path).loc[:, "target"]
-    y_test_dummies = pd.get_dummies(y_test)
 
     # Set threshhold and manipulate prediction array to leave it in the right
     # format.
     binary_preds = (predicts > params["thresh"]).astype(int)
-    final_preds = (
-        binary_preds[:, 0] * 0 + binary_preds[:, 1] * 1 + binary_preds[:, 2] * 2
-    )
 
     # Compute metrics and persist...
-    confsn_matrix = confusion_matrix(y_test, final_preds)
-    roc_auc = roc_auc_score(y_test_dummies, binary_preds)
-    num_cats = y_test_dummies.columns.shape[0]
-    persist_scores(scores_file, confsn_matrix, roc_auc, num_cats)
+    confsn_matrix = confusion_matrix(y_test, binary_preds[:, 1])
+    print(confsn_matrix)
+    # roc_auc = roc_auc_score(y_test_dummies, binary_preds)
+    # num_cats = y_test_dummies.columns.shape[0]
+    # persist_scores(scores_file, confsn_matrix, roc_auc, num_cats)
 
-    # Create and persist plots...
-    persist_pr_curves(y_test_dummies, predicts, plots_path)
+    # # Create and persist plots...
+    # persist_pr_curves(y_test_dummies, predicts, plots_path)
 
 
 def persist_scores(
