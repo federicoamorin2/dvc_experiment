@@ -40,3 +40,9 @@ stages:
     - path: data/output/preds.pkl
       md5: 00cbd3dc720aba6b3887b70bda5c7c3e
       size: 3320
+  evaluate:
+    cmd: python src/modeling.py evaluate data/output/preds.pkl data/processed/test.csv
+    deps:
+    - path: data/output/preds.pkl
+      md5: 00cbd3dc720aba6b3887b70bda5c7c3e
+      size: 3320

@@ -22,3 +22,7 @@ stages:
     - data/processed/test.csv
     outs:
     - data/output/preds.pkl
+  evaluate:
+    cmd: python src/modeling.py evaluate data/output/preds.pkl data/processed/test.csv
+    deps:
+    - data/output/preds.pkl
