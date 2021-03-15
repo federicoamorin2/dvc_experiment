@@ -1,4 +1,2 @@
 split:
   test_size: .5
-evaluate:
-  thresh: .5

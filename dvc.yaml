@@ -1,0 +1,24 @@
+stages:
+  split:
+    cmd: python src/modeling.py split-data data/student-mat.csv data/processed/training.csv
+      data/processed/test.csv
+    deps:
+    - data/student-mat.csv
+    params:
+    - split.test_size
+    outs:
+    - data/processed/training.csv
+    - data/processed/test.csv
+  train:
+    cmd: python src/modeling.py make-model data/processed/training.csv models/model.pkl
+    deps:
+    - data/processed/training.csv
+    outs:
+    - models/model.pkl
+  predict:
+    cmd: python src/modeling.py predict models/model.pkl data/processed/test.csv data/output/preds.pkl
+    deps:
+    - models/model.pkl
+    - data/processed/test.csv
+    outs:
+    - data/output/preds.pkl
