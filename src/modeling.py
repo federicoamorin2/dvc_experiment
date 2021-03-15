@@ -1,6 +1,7 @@
 """Module containing Machiene learning pipeline
 """
 
+import re
 import json
 import pickle
 from pathlib import Path
@@ -9,7 +10,7 @@ import numpy as np
 import pandas as pd
 import typer
 import yaml
-from sklearn.linear_model import LogisticRegression
+from lightgbm import LGBMClassifier
 from sklearn.metrics import (
     confusion_matrix,
     roc_auc_score,
@@ -22,22 +23,28 @@ app = typer.Typer()
 
 
 @app.command()
-def split_data(raw_db_path: Path) -> None:
+def split_data(
+    raw_db_path: Path,
+    train_df_path: Path,
+    test_df_path: Path,
+) -> None:
     """Split data in to train and test sets.
 
     Args:
         raw_db_path (Path): Path to the raw database.
     """
     raw_db = pd.read_csv(raw_db_path)
+
     params = PARAMS["split"]
     features, targets = raw_db.drop("target", axis=1), raw_db["target"]
+
     train_df, test_df, y_train, y_test = train_test_split(
         features, targets, random_state=305, test_size=params["test_size"]
     )
-    train_df["target"] = y_train
-    test_df["target"] = y_test
-    train_df.to_csv("data/training.csv")
-    test_df.to_csv("data/test.csv")
+    train_df["target"] = y_train.map({"F": 1, "M": 0})
+    test_df["target"] = y_test.map({"F": 1, "M": 0})
+    train_df.to_csv(train_df_path)
+    test_df.to_csv(test_df_path)
 
 
 @app.command()
@@ -53,9 +60,12 @@ def make_model(train_df_path: Path, output_path: Path) -> None:
     # Read train dataset and exctract features and target.
     train_df = pd.read_csv(train_df_path)
     x_train, y_train = train_df.drop("target", axis=1), train_df["target"]
+    mask = (x_train.dtypes == "int64").tolist()
+    x_train = x_train.loc[:, mask]
 
     # Instanciate model with best hyperparams found.
-    model = LogisticRegression(multi_class="ovr")
+    model = LGBMClassifier()
+    x_train = x_train.rename(columns=lambda x: re.sub("[^A-Za-z0-9_]+", "", x))
     model = model.fit(x_train, y_train)
 
     # Persist model...
@@ -74,6 +84,8 @@ def predict(model_path: Path, test_df_path: Path, predict_path: Path) -> None:
     """
     # Read test dataset.
     x_test = pd.read_csv(test_df_path).drop("target", axis=1)
+    mask = (x_test.dtypes == "int64").tolist()
+    x_test = x_test.loc[:, mask]
 
     # Read trained model and predict
     with open(model_path, "rb") as fd:
