@@ -1,7 +1,7 @@
 stages:
   split:
-    cmd: python src/modeling.py split-data data/student-mat.csv data/processed/training.csv
-      data/processed/test.csv
+    cmd: python src/modeling.py split-data data/student-mat.csv
+     data/processed/training.csv data/processed/test.csv
     deps:
     - data/student-mat.csv
     params:
@@ -16,7 +16,8 @@ stages:
     outs:
     - models/model.pkl
   predict:
-    cmd: python src/modeling.py predict models/model.pkl data/processed/test.csv data/output/preds.pkl
+    cmd: python src/modeling.py predict models/model.pkl data/processed/test.csv
+     data/output/preds.pkl
     deps:
     - models/model.pkl
     - data/processed/test.csv
@@ -24,5 +25,12 @@ stages:
     - data/output/preds.pkl
   evaluate:
     cmd: python src/modeling.py evaluate data/output/preds.pkl data/processed/test.csv
+     scores.json pr_curve.json
     deps:
     - data/output/preds.pkl
+    metrics:
+    - scores.json
+    plots:
+    - pr_curve.json
+    outs:
+    - data/output/results.csv

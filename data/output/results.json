@@ -1,0 +1,796 @@
+{
+    "pred_true": [
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "1"
+        },
+        {
+            "predicted": "[0 1]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "0"
+        },
+        {
+            "predicted": "[1 0]",
+            "true": "1"
+        }
+    ]
+}

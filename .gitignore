@@ -1,2 +1,4 @@
 venv/
 .vscode
+/scores.json
+/pr_curve.json
