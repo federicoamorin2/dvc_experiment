@@ -25,12 +25,12 @@ stages:
       size: 21750
     params:
       params.yaml:
-        model.n_estimators: 100
-        model.subsample: 1.0
+        model.n_estimators: 10
+        model.subsample: 0.4
     outs:
     - path: models/model.pkl
-      md5: ff36936a62b9e99641a94427f0be2de7
-      size: 95750
+      md5: 9449018be9978cf927cca3db0c1a6930
+      size: 13670
   predict:
     cmd: python src/modeling.py predict models/model.pkl data/processed/test.csv data/output/preds.pkl
     deps:
@@ -38,26 +38,26 @@ stages:
       md5: 4f7d850048e3dfc03a8e83b718f7d252
       size: 21939
     - path: models/model.pkl
-      md5: ff36936a62b9e99641a94427f0be2de7
-      size: 95750
+      md5: 9449018be9978cf927cca3db0c1a6930
+      size: 13670
     outs:
     - path: data/output/preds.pkl
-      md5: 00cbd3dc720aba6b3887b70bda5c7c3e
+      md5: 83d3062aa7da33f5673998d4cb022be9
       size: 3320
   evaluate:
     cmd: python src/modeling.py evaluate data/output/preds.pkl data/processed/test.csv
       scores.json pr_curve.json
     deps:
     - path: data/output/preds.pkl
-      md5: 00cbd3dc720aba6b3887b70bda5c7c3e
+      md5: 83d3062aa7da33f5673998d4cb022be9
       size: 3320
     outs:
     - path: data/output/results.csv
-      md5: 92f80a5f1971c328b67f2dda02019835
+      md5: f245a6885d1d644ddc5152941c614397
       size: 807
     - path: pr_curve.json
-      md5: 7f071dd611601b4825afc43105e76de4
-      size: 29607
+      md5: 8a7dd2cc9dbe44721f1c027e5feb0952
+      size: 16552
     - path: scores.json
-      md5: 815ac0c359aec78a2afed8cb810a9704
+      md5: 73229ee83ef5b1e167bca1d3ba2cc0ee
       size: 85
