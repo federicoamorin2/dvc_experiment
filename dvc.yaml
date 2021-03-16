@@ -13,6 +13,9 @@ stages:
     cmd: python src/modeling.py make-model data/processed/training.csv models/model.pkl
     deps:
     - data/processed/training.csv
+    params:
+    - model.n_estimators
+    - model.subsample
     outs:
     - models/model.pkl
   predict:
