@@ -19,12 +19,12 @@ stages:
     outs:
     - models/model.pkl
   predict:
-    cmd: python src/modeling.py predict models/model.pkl data/processed/test.csv
-     data/output/preds.pkl
+    cmd: python src/modeling.py predict models/model.pkl data/processed/test.csv data/output/
     deps:
     - models/model.pkl
     - data/processed/test.csv
     outs:
+    - data/output/explainer.joblib
     - data/output/preds.pkl
   evaluate:
     cmd: python src/modeling.py evaluate data/output/preds.pkl data/processed/test.csv

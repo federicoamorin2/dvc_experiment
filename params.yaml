@@ -3,5 +3,5 @@ split:
 evaluate:
   thresh: .5
 model:
-  n_estimators: 10
+  n_estimators: 3000
   subsample: 0.4

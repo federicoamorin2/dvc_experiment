@@ -1,4 +1,4 @@
-"""Module containing Machiene learning pipeline
+"""Module containing Machine learning pipeline
 """
 
 import re
@@ -6,7 +6,8 @@ import json
 import pickle
 from pathlib import Path
 
-import numpy as np
+from nptyping import NDArray  # , Bool
+from explainerdashboard import ClassifierExplainer
 import pandas as pd
 import typer
 import yaml
@@ -85,7 +86,8 @@ def predict(model_path: Path, test_df_path: Path, predict_path: Path) -> None:
         predict_path (Path): Path to store predictions.
     """
     # Read test dataset.
-    x_test = pd.read_csv(test_df_path).drop("target", axis=1)
+    test_df = pd.read_csv(test_df_path)
+    x_test, y_test = test_df.drop("target", axis=1), test_df.loc[:, "target"]
     mask = (x_test.dtypes == "int64").tolist()
     x_test = x_test.loc[:, mask]
 
@@ -93,9 +95,16 @@ def predict(model_path: Path, test_df_path: Path, predict_path: Path) -> None:
     with open(model_path, "rb") as fd:
         model = pickle.load(fd)
     preds = model.predict_proba(x_test)
+    explainer = ClassifierExplainer(
+        model,
+        x_test,
+        y_test,
+        descriptions=None,  # defaults to None
+    )
+    explainer.dump(predict_path / "explainer.joblib")
 
     # Persist predictions...
-    with open(predict_path, "wb") as fd:
+    with open(predict_path / "preds.pkl", "wb") as fd:
         pickle.dump(preds, fd, pickle.HIGHEST_PROTOCOL)
 
 
@@ -121,7 +130,8 @@ def evaluate(
     # format.
     binary_preds = (predicts > params["thresh"]).astype(int)
     pred_to_actual = pd.DataFrame(
-        {"predicted": binary_preds[:, 1].tolist(), "true": y_test.values.tolist()}
+        {"predicted": binary_preds[:, 1].tolist(
+        ), "true": y_test.values.tolist()}
     )
 
     pred_to_actual.to_csv("data/output/results.csv", index=False)
@@ -129,30 +139,30 @@ def evaluate(
     # Compute metrics and persist...
     confsn_matrix = confusion_matrix(y_test, binary_preds[:, 1])
     roc_auc = roc_auc_score(y_test.values, binary_preds[:, 1])
-    persist_scores(scores_file, confsn_matrix, roc_auc, num_cats=2)
+    persist_scores(scores_file, confsn_matrix, roc_auc, num_cat=2)
 
     # # Create and persist plots...
     persist_pr_curves(y_test.values, predicts[:, 1], plots_path)
 
 
 def persist_scores(
-    scores_file: Path, confsn_matrix: np.array, roc_auc: np.array, num_cats: int
-):
-    print(type(roc_auc))
+    scores_file: Path, confsn_matrix: NDArray, roc_auc: NDArray, num_cat: int
+) -> None:
     """Persist model scores in json format"""
     with open(scores_file, "w") as fd:
         true_positives_dict = {
-            f"true_pos_{i}": float(confsn_matrix[i][i]) for i in range(num_cats)
+            f"true_pos_{i}": float(confsn_matrix[i][i]) for i in range(num_cat)
         }
         true_positives_dict["roc_auc"] = roc_auc
         json.dump(true_positives_dict, fd, indent=4)
 
 
-def persist_pr_curves(y_test: np.array, predicts: np.array, plots_path: Path):
+def persist_pr_curves(y_test: NDArray, predicts: NDArray, plots_path: Path):
     """Make and persist precision recall curve for each category in json."""
 
     with open(plots_path, "w") as fd:
-        precision, recall, prc_thresholds = precision_recall_curve(y_test, predicts)
+        precision, recall, prc_thresholds = precision_recall_curve(
+            y_test, predicts)
         json.dump(
             {
                 "prc": [
